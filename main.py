@@ -19,11 +19,14 @@ msg.set_content('This is a message body for test!')
 with open('AttachmentFileName', 'rb') as f:
     file_data = f.read()
     file_name = f.name
-    
+
 ''' change maintype and subtype for other attachment file except jpg '''
 msg.add_attachment(file_data, maintype='image', subtype='jpg', filename = file_name)
 
 with smtplib.SMTP_SSL(EMAIL_HOST, EMAIL_PORT_SSL) as server:
-    server.login (EMAIL_HOST_USER, EMAIL_HOST_PASSWORD)
-    server.send_message(msg)
-    print('your email has been sent')
+    try:
+        server.login (EMAIL_HOST_USER, EMAIL_HOST_PASSWORD)
+        server.send_message(msg)
+        print('your email has been sent')
+    except:
+        print('Failed to send email')
