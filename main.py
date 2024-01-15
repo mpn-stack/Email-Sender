@@ -6,7 +6,7 @@ from email.message import EmailMessage
 '''
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'YorEmailAddress@gmail.com'
+EMAIL_HOST_USER = 'Yor_Email_Address@gmail.com'
 EMAIL_PORT_SSL = 465
 EMAIL_HOST_PASSWORD='replace with your app password' """ Example : clluqiscfeduglpq"""
 
